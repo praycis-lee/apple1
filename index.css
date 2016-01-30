@@ -149,11 +149,11 @@ nav li{
 }
 #aa:checked ~ nav .onebox .one{
     transition: transform 0.2s;
-    transform:translateY(0px) rotateZ(90deg);
+    transform:translateY(1px) rotateZ(90deg);
 }
 #aa:checked ~ nav .twobox .two{
     transition: transform 0.2s;
-    transform:translateY(0px) rotateZ(90deg);
+    transform:translateY(1px) rotateZ(90deg);
 }
 #aa:checked ~ nav .onebox{
     transition: transform 0.25s 0.2s;
