@@ -403,7 +403,13 @@ nav .shop a{background-image: url(./image/d2.svg)}
      }
      .backing-link{
         background:url(./image/home_hero_ssn_small.png) no-repeat center;
-}
+     }
+     .backing-link1{
+        background:url(./image/home_hero_evergreen_ipad_small.jpg) no-repeat center;
+     }
+     .backing-link2{
+        background:url(./image/home_hero_apple_tv_landscape_small.jpg) no-repeat center;
+     }
 }
 .promo-tile-1 a{
 	background: url(./image/promo_holiday_watch_large.jpg) center;
