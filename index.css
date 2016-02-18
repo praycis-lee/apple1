@@ -59,7 +59,6 @@ nav li{
 
 #xiala{
     width: 100%;
-    background:black;
     z-index: 10;
     margin: 0;
     padding: 0 48px;
@@ -69,6 +68,7 @@ nav li{
     left:0;
     top:48px;
     visibility: hidden;
+    transition:visibility 0s linear;
 }
 #xiala li{
     width: 100%;
@@ -78,10 +78,32 @@ nav li{
     color:#fff;
     border-bottom: 1px solid #333;
 }
+#aa:checked~ nav #xiala li{
+    animation-name:opacit;
+    animation-duration:3s;
+    animation-fill-mode:both;
+}
+#aa:checked~ nav #xiala .last{
+    animation-name:opacit;
+    animation-duration:1s;
+    animation-fill-mode:both;
+}
 #xiala>li>a{
     font-size: 20px;
     background: no-repeat left center;
 }
+/*----小屏幕下拉菜单延时--------*/
+#xiala .mac1 {animation-delay:200ms;}
+#xiala .ipad1 {animation-delay:300ms}
+#xiala .iphone1 {animation-delay:400ms;}
+#xiala .watch1 {animation-delay:500ms;}
+#xiala .tv1 {animation-delay:600ms;}
+#xiala .music1 {animation-delay:700ms;}
+#xiala .support1 {animation-delay:800ms;}
+#xiala .last{ 
+    animation-delay:1s;
+}
+
 #xiala .mac1 a{background-image: url(./image/d4.svg)}
 #xiala .ipad1 a{background-image: url(./image/d6.svg)}
 #xiala .iphone1 a{background-image: url(./image/d1.svg)}
@@ -137,15 +159,27 @@ nav li{
     transform: translateY(3px);
     transition: transform 0.25s 0.2s;
 }
-
-#aa:checked ~ nav #xiala{
-   visibility:visible;
-}
 #aa{
     display: none;
 }
 #aa:checked ~ nav{
+    transition:all .35s .3s ease;
+    height:100%;
     background:black;
+}
+#aa:checked ~ nav #xiala{
+    visibility: visible;
+}
+@keyframes opacit{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+#aa:checked ~ nav .shop{
+    transform:translateX(100px);
 }
 #aa:checked ~ nav .onebox .one{
     transition: transform 0.2s;
@@ -189,6 +223,11 @@ nav li{
    #smalul{
     display: block;
    }
+   nav{
+    height:48px;
+    overflow: hidden;
+    transition:height 0.35s .15s,background-color .35s;
+   }
 }
 @media(min-width:750px){
     #aa:checked ~ nav #xiala{
@@ -230,7 +269,7 @@ nav .tv{width:2.36em;height:2.75em;}
 nav .music{width:3.47em;height:2.75em;}
 nav .support{width:4.416em;height:2.75em;}
 nav .search{width:2.5em;height:2.75em;}
-nav .shop{width:2.375em;height:2.75em;}
+nav .shop{width:2.375em;height:2.75em;transition:all .25s .55s ease-out;}
 
 nav .logo a{background-image: url(./image/d9.svg);}
 nav .mac a{background-image: url(./image/d4.svg)}
